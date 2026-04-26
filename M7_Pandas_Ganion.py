@@ -23,10 +23,10 @@ df.info()
 df.describe()
 
 #list of columns
-df.columns()
+df.columns
 
 #gives range
-df.index()
+df.index
 
 #all of the values in the column - index all values in country column
 df["Country"]
@@ -81,10 +81,10 @@ df[df["Quantity"] <= 2]
 df[df["Quantity"] != 2]
 
 #lists all customer names starting with A
-df[df["CustomerName".str.startswith("A")]]
+df[df["CustomerName"].str.startswith("A")]
 
 #lists all customer names ending with a
-df[df["CustomerName".str.endswith("a")]]
+df[df["CustomerName"].str.endswith("a")]
 
 #lists any country with USA, Sweden, Brazil
 df[df["Country"].isin(["USA", "Sweden", "Brazil"])]
@@ -123,7 +123,7 @@ df.fillna({"OrderID": 0}, inplace=True)
 df.rename(columns={"OrderID": "Order ID"}, inplace=True)
 
 #count of every single value that exists in country
-df["Country".value_counts()]
+df["Country"].value_counts()
 
 #sum total price of all products grouped by country
 df.groupby("Country")["Price"].sum()
